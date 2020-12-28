@@ -42,7 +42,7 @@ To view the final application demo, please use this link:
 
 The code for NEON peach can be found on github using the following link:
 
-- https://github.com/loisgabor/project-2-legislations
+- https://github.com/loisimonca/project-2-legislations
 
 Once the code is forked and cloned to your computer, you will need to run `npm install` to install the packages associated with this application.
 
@@ -55,7 +55,7 @@ The application uses a laws_db to store user information
 # Contributing
 
 - [Garrett Walker](https://github.com/garrettwalter)
-- [Lois Simonca](https://github.com/loisgabor)
+- [Lois Simonca](https://github.com/loisimonca)
 - [Rocco Maniscalco](https://github.com/roccomaniscalco)
 - [Shelby Andersen](https://github.com/shelbyandersen)
 
@@ -63,7 +63,7 @@ The application uses a laws_db to store user information
 
 To test this application you will need to fork the repo here:
 
-- https://github.com/loisgabor/project-2-legislations
+- https://github.com/loisimonca/project-2-legislations
 
 Then, run `node server.js` to begin the application in your integrated terminal.
 
