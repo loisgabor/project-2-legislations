@@ -51,18 +51,36 @@ $(document).ready(function () {
     eInput.val("");
   });
   function signUpUser(username, password, firstName, lastName, email) {
-    $.post("/api/signup", {
-      username: username,
-      password: password,
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-    })
-      .then(function (data) {
+    $.ajax({
+      url: "/api/signup",
+      type: "POST",
+      data: JSON.stringify({
+        username: username,
+        password: password,
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+      }),
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      success: function (data) {
         localStorage.setItem("currentUser", username);
         window.location.replace("/legislation");
         // If there's an error, handle it by throwing up a bootstrap alert
-      })
+      },
+    })
+      // $.post("/api/signup", {
+      //   username: username,
+      //   password: password,
+      //   firstName: firstName,
+      //   lastName: lastName,
+      //   email: email,
+      // })
+      //   .then(function (data) {
+      //     localStorage.setItem("currentUser", username);
+      //     window.location.replace("/legislation");
+      //     // If there's an error, handle it by throwing up a bootstrap alert
+      //   })
       .catch(handleLoginErr);
   }
 
