@@ -8,6 +8,7 @@ const {
 } = require("@handlebars/allow-prototype-access");
 const db = require("./models");
 const app = express();
+const compression = require('compression');
 
 const viewController = require("./controllers/viewController")
 const userController = require("./controllers/userController");
@@ -28,6 +29,9 @@ app.use(express.json());
 
 // Static directory to be served
 app.use(express.static("public"));
+
+//Compression
+app.use(compression())
 
 // Configure express-handlebars
 app.engine(
