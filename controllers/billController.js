@@ -17,7 +17,9 @@ router.post("/api/bill", async (req, res) => {
 
 router.get("/legislation", isAuthenticated, async (req, res) => {
   try {
+    console.log("hitting this route");
     const bills = await db.Bill.findAll();
+    console.log(bills);
     res.render("legislation", { legislation: bills, bill: bills[0] });
   } catch (err) {
     console.log(err);
