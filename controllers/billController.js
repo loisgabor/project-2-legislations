@@ -9,7 +9,7 @@ router.post("/api/bill", async (req, res) => {
     const bills = await db.Bill.bulkCreate(req.body.bills, {
       updateOnDuplicate: ["status"],
     });
-    res.json(bills)
+    res.json(bills);
   } catch (err) {
     res.send(err);
   }
@@ -18,11 +18,12 @@ router.post("/api/bill", async (req, res) => {
 router.get("/legislation", isAuthenticated, async (req, res) => {
   try {
     const bills = await db.Bill.findAll();
-    res.render("legislation", {legislation: bills, bill: bills[0]});
+    res.render("legislation", { legislation: bills, bill: bills[0] });
   } catch (err) {
+    console.log(err);
     res.send(err);
   }
-})
+});
 
 router.get("/legislation/:id", async (req, res) => {
   try {
@@ -32,7 +33,7 @@ router.get("/legislation/:id", async (req, res) => {
         id: req.params.id,
       },
     });
-    res.render("legislation", {legislation: bills, bill: bill.dataValues});
+    res.render("legislation", { legislation: bills, bill: bill.dataValues });
   } catch (err) {
     res.send(err);
   }
